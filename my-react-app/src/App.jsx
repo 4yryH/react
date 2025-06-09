@@ -7,6 +7,7 @@ function App() {
     <>
       <h1>Задание JSX</h1>
       <ToDoDynamic/>
+
       <h1>Задание Props</h1>
       <UserCard name='Мария' age={25}/>
       <UserCard name='Олег' age={32}/>

@@ -1,4 +1,4 @@
-function UserCard ({name, age}) {
+function UserCard ( {name, age} ) {
   return (
     <div>
       <p>Имя: {name}</p>
