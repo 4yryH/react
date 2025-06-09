@@ -17,7 +17,10 @@ function ToDoDynamic() {
   return (<div>
     <h1>Список дел</h1>
     <ul>
-      {tasks.map((task, i) => <li key={i}>{tasks}</li>)}
+      {tasks.map((task, i) =>
+        <li key={i}>{task}</li>)}
     </ul>
   </div>);
 }
+
+export default ToDoDynamic;
