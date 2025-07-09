@@ -9,6 +9,7 @@ import {TodoList} from "./components/task-14/Todo.jsx";
 import {Form} from "./components/task-15/ValidationForm.jsx";
 import {RenderCounter} from "./components/task-15/RenderCounter.jsx";
 import {CustomButton} from "./components/task-15/CustomButton.jsx";
+import {WindowSizeDisplay} from "./components/task-18/WindowSize.jsx";
 
 function App() {
   const buttonRef = useRef(null);
@@ -51,6 +52,10 @@ function App() {
       <h1 style={{color: 'green'}}>Задание работа с формами: forwardRef</h1>
       <p>Фокус на кнопке при монтировании</p>
       <CustomButton ref={buttonRef}>Жмякни</CustomButton>
+
+      <h1 style={{color: 'green'}}>Задание кастомные хуки: useWindowSize</h1>
+      <WindowSizeDisplay/>
+
     </>
   );
 }

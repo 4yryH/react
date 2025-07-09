@@ -58,7 +58,7 @@
       <recent name="D:\ivashev-eductaion\react\my-react-app\src\components" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.lint">
+  <component name="RunManager" selected="npm.preview">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -105,7 +105,8 @@
       <option name="presentableId" value="Default" />
       <updated>1751524618234</updated>
       <workItem from="1751524619357" duration="4817000" />
-      <workItem from="1751603924064" duration="8885000" />
+      <workItem from="1751603924064" duration="11501000" />
+      <workItem from="1752041049104" duration="1651000" />
     </task>
     <servers />
   </component>
