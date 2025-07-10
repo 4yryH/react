@@ -1,5 +1,4 @@
 import React, {useRef, useEffect} from 'react';
-import './App.css'
 import ToDoDynamic from './components/task-3/task-3-react.jsx'
 import UserCard from "./components/task-5/task-5-props.jsx";
 import {Counter, GetPost} from "./components/task-6/task-6-hooks-usestate.jsx";
@@ -10,6 +9,8 @@ import {Form} from "./components/task-15/ValidationForm.jsx";
 import {RenderCounter} from "./components/task-15/RenderCounter.jsx";
 import {CustomButton} from "./components/task-15/CustomButton.jsx";
 import {WindowSizeDisplay} from "./components/task-18/WindowSize.jsx";
+import {WithLoading} from "./components/task-19/WithLoading.jsx";
+import './App.css'
 
 function App() {
   const buttonRef = useRef(null);
@@ -19,6 +20,11 @@ function App() {
       buttonRef.current.focus();
     }
   }, []);
+
+  // компоненты, который будем передавать в HOC
+  const DataComponent = () => <div>Данные загружены</div>
+  // передача компонента в HOC WithLoading
+  const DataWithLoading = WithLoading(DataComponent)
 
   return (
     <>
@@ -55,6 +61,10 @@ function App() {
 
       <h1 style={{color: 'green'}}>Задание кастомные хуки: useWindowSize</h1>
       <WindowSizeDisplay/>
+
+      <h1 style={{color: 'green'}}>Задание HOC</h1>
+      <p>setTimeout выставлен 2сек</p>
+      <DataWithLoading/>
 
     </>
   );
