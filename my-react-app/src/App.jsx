@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from 'react';
+import React, {useRef, useEffect, Suspense, lazy, useState} from 'react';
 import ToDoDynamic from './components/task-3/task-3-react.jsx'
 import UserCard from "./components/task-5/task-5-props.jsx";
 import {Counter, GetPost} from "./components/task-6/task-6-hooks-usestate.jsx";
@@ -11,6 +11,8 @@ import {CustomButton} from "./components/task-15/CustomButton.jsx";
 import {WindowSizeDisplay} from "./components/task-18/WindowSize.jsx";
 import {WithLoading} from "./components/task-19/WithLoading.jsx";
 import './App.css'
+
+const BigComponent = lazy(() => import("./components/task-20/BigComponent.jsx"));
 
 function App() {
   const buttonRef = useRef(null);
@@ -25,6 +27,9 @@ function App() {
   const DataComponent = () => <div>Данные загружены</div>
   // передача компонента в HOC WithLoading
   const DataWithLoading = WithLoading(DataComponent)
+
+  // состояние для кнопки показать большой компонент
+  const [showBig, setShowBig] = useState(false);
 
   return (
     <>
@@ -66,6 +71,14 @@ function App() {
       <p>setTimeout выставлен 2сек</p>
       <DataWithLoading/>
 
+      <h1 style={{color: 'green'}}>Задание lazy & Suspense</h1>
+      <button onClick={() => setShowBig(true)}>Показать большой компонент</button>
+      {showBig && (
+        <Suspense fallback="Загрузка компонента...">
+          <BigComponent/>
+        </Suspense>
+      )
+      }
     </>
   );
 }
