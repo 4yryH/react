@@ -1,4 +1,4 @@
-import React, {useRef, useEffect, Suspense, lazy, useState} from 'react';
+import React, {useRef, useEffect, Suspense, useState} from 'react';
 import ToDoDynamic from './components/task-3/task-3-react.jsx'
 import UserCard from "./components/task-5/task-5-props.jsx";
 import {Counter, GetPost} from "./components/task-6/task-6-hooks-usestate.jsx";
@@ -12,7 +12,7 @@ import {WindowSizeDisplay} from "./components/task-18/WindowSize.jsx";
 import {WithLoading} from "./components/task-19/WithLoading.jsx";
 import './App.css'
 
-const BigComponent = lazy(() => import("./components/task-20/BigComponent.jsx"));
+const BigComponent = React.lazy(() => import("./components/task-20/BigComponent.jsx"));
 
 function App() {
   const buttonRef = useRef(null);
